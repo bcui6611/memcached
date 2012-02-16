@@ -19,15 +19,13 @@ TCMALLOC_ROOT= /opt/gperftools
 TCMALLOC_LIB= ${TCMALLOC_ROOT}/lib
 TCMALLOC_INCLUDE = ${TCMALLOC_ROOT}/include
 
-TCMALLOC_FLAGS =
-TCMALLOC_FLAGS += -Wwrite-strings \
+TCMALLOC_FLAGS = -Wwrite-strings \
                     -Wno-sign-compare -DNO_FRAME_POINTER \
                     -fno-builtin-malloc -fno-builtin-free -fno-builtin-realloc \
                     -fno-builtin-calloc -fno-builtin-cfree \
                     -fno-builtin-memalign -fno-builtin-posix_memalign \
                     -fno-builtin-valloc -fno-builtin-pvalloc
-TCMALLOC_LIB_FLAGS =
-TCMALLOC_LIB_FLAGS += -Wl,-u__tcmalloc \
+TCMALLOC_LIB_FLAGS = -Wl,-u__tcmalloc \
                  $(TCMALLOC_LIB)/libtcmalloc_minimal.a -lPsapi -lshlwapi \
                  -lstdc++.dll
 
